@@ -22,19 +22,19 @@ var_dump($paraulesParells);
 
 echo "<h2>Exercici 3. array_reduce() per calcular suma de primers d'un array d'enters</h2>";
 
-$enters = [3,5,7,11,14,26,31];
-//anade los primos a $primers 
-$primers = array_filter($enters, function($enter) {
-    $prim = true;
-    for ($i=2; (($i < $enter) && ($prim == true)); $i++) {
-        if ($enter % $i == 0) {
-            $prim = false;
+$numeros = [3,5,7,11,14,26,31];
+//anade los primos a $primos 
+$primos = array_filter($numeros, function($n) {
+    $primo = true;
+    for ($i=2; (($i < $n) && ($primo == true)); $i++) {
+        if ($n % $i == 0) {
+            $primo = false;
         }
     }
-    return $prim;
+    return $primo;
 } 
 );
-print_r($primers);
-$sumaPrimers= array_reduce($primers, fn($acum, $primer) => $acum + $primer);
-echo "<p>La suma dels nombres primers és $sumaPrimers</p>";
+print_r($primos);
+$sumaPrimos= array_reduce($primos, fn($acum, $primo) => $acum + $primo);
+echo "<p>La suma dels nombres primers és $sumaPrimos</p>";
 ?>
